@@ -16,11 +16,21 @@ class Tile
 
   def draw
     @window.draw_quad(
-            @x * SIZE,       @y * SIZE, COLOR[@value],
-      (@x + 1) * SIZE,       @y * SIZE, COLOR[@value],
-            @x * SIZE, (@y + 1) * SIZE, COLOR[@value],
-      (@x + 1) * SIZE, (@y + 1) * SIZE, COLOR[@value],
+      offset_x + @x * SIZE,       offset_y + @y * SIZE,       COLOR[@value],
+      offset_x + (@x + 1) * SIZE, offset_y + @y * SIZE,       COLOR[@value],
+      offset_x + @x * SIZE,       offset_y + (@y + 1) * SIZE, COLOR[@value],
+      offset_x + (@x + 1) * SIZE, offset_y + (@y + 1) * SIZE, COLOR[@value],
       0
     )
+  end
+
+  private
+
+  def offset_x
+    @window.map.offset_x
+  end
+
+  def offset_y
+    @window.map.offset_y
   end
 end

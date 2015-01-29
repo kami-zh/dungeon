@@ -35,6 +35,14 @@ class Map
     @layout[y][x] == 1 ? true : false
   end
 
+  def offset_x
+    (@window.width - (TILE_LAYOUT.map(&:size).max * Tile::SIZE)) / 2
+  end
+
+  def offset_y
+    (@window.height - (TILE_LAYOUT.size * Tile::SIZE)) / 2
+  end
+
   private
 
   def poke?(x, y)
