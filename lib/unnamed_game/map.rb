@@ -47,6 +47,13 @@ class Map
     (@window.height - (TILE_LAYOUT.size * Tile::SIZE)) / 2
   end
 
+  def button_down(id)
+    case id
+    when Gosu::KbM
+      @window.mode = :menu
+    end
+  end
+
   private
 
   def poke?(x, y)
