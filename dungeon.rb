@@ -33,8 +33,7 @@ class Player
   end
 
   def draw
-    tile = @window.map.tile(@x, @y, 2)
-    tile.draw
+    @window.map.tile(@x, @y, 2).draw
   end
 
   def button_down(id)
