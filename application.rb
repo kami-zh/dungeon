@@ -6,21 +6,53 @@ class GameWindow < Gosu::Window
 
     self.caption = 'Gosu Sample'
 
-    @x = 0
-    @y = 0
-
-    @character = Gosu::Image.new(self, 'assets/images/character.png', false)
+    @character = Character.new(self)
   end
 
   def draw
-    @character.draw_rot(@x, @y, 0, 0)
+    @character.draw
   end
 
   def update
-    @x += 1 if button_down? Gosu::KbRight
-    @x -= 1 if button_down? Gosu::KbLeft
-    @y += 1 if button_down? Gosu::KbDown
-    @y -= 1 if button_down? Gosu::KbUp
+    @character.update
+  end
+end
+
+class Character
+  def initialize(window)
+    @window = window
+
+    @x = 0
+    @y = 0
+
+    @image = Gosu::Image.new(@window, 'assets/images/character.png', false)
+  end
+
+  def draw
+    @image.draw_rot(@x, @y, 0, 0)
+  end
+
+  def update
+    move_up    if @window.button_down? Gosu::KbUp
+    move_down  if @window.button_down? Gosu::KbDown
+    move_right if @window.button_down? Gosu::KbRight
+    move_left  if @window.button_down? Gosu::KbLeft
+  end
+
+  def move_up
+    @y -= 1
+  end
+
+  def move_down
+    @y += 1
+  end
+
+  def move_right
+    @x += 1
+  end
+
+  def move_left
+    @x -= 1
   end
 end
 
