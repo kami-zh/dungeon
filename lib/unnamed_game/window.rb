@@ -4,7 +4,7 @@ class Window < Gosu::Window
   def initialize
     super(480, 480, false)
 
-    self.caption = 'Dungeon Game'
+    self.caption = 'Unnamed Game'
 
     @map    = Map.new(self)
     @player = Player.new(self)
