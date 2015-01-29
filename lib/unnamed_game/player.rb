@@ -1,8 +1,10 @@
 class Player
   def initialize(window)
     @window = window
-    @x = 0
-    @y = 0
+
+    # TODO: Set depending on player level
+    @x = 4
+    @y = 4
   end
 
   def draw
