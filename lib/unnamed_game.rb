@@ -9,4 +9,5 @@ autoload :Player, 'unnamed_game/player'
 
 module Command
   autoload :Save, 'unnamed_game/commands/save'
+  autoload :Load, 'unnamed_game/commands/load'
 end

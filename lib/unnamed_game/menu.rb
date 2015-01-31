@@ -1,6 +1,7 @@
 class Menu
   TEXT = <<-TEXT
     S: Save
+    L: Load
     ESC: Return to map
   TEXT
 
@@ -18,6 +19,8 @@ class Menu
       @window.mode = :map
     when Gosu::KbS
       Command::Save.new(@window).call
+    when Gosu::KbL
+      Command::Load.new(@window).call
     end
   end
 
