@@ -8,8 +8,9 @@ class Window < Gosu::Window
 
     self.caption = 'Unnamed Game'
 
-    @mode = :map
+    @mode = :start
 
+    @start  = Start.new(self)
     @map    = Map.new(self)
     @menu   = Menu.new(self)
     @player = Player.new(self)
@@ -17,6 +18,8 @@ class Window < Gosu::Window
 
   def draw
     case @mode
+    when :start
+      @start.draw
     when :map
       @map.draw
       @player.draw
@@ -30,6 +33,8 @@ class Window < Gosu::Window
 
   def button_down(id)
     case @mode
+    when :start
+      @start.button_down(id)
     when :map
       @map.button_down(id)
       @player.button_down(id)

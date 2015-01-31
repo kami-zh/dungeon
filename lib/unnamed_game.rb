@@ -1,6 +1,7 @@
 require 'gosu'
 
 autoload :Window, 'unnamed_game/window'
+autoload :Start,  'unnamed_game/start'
 autoload :Map,    'unnamed_game/map'
 autoload :Tile,   'unnamed_game/tile'
 autoload :Menu,   'unnamed_game/menu'
