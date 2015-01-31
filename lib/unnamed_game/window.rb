@@ -1,5 +1,6 @@
 class Window < Gosu::Window
   attr_reader :map
+  attr_reader :player
 
   attr_writer :mode
 
