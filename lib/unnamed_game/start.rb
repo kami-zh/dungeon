@@ -1,5 +1,8 @@
 class Start
-  TEXT = 'Press Enter to get started!'
+  TEXT = <<-TEXT
+    Return: Start
+    L: Load
+  TEXT
 
   def initialize(window)
     @window = window
@@ -12,6 +15,9 @@ class Start
   def button_down(id)
     case id
     when Gosu::KbReturn
+      @window.mode = :map
+    when Gosu::KbL
+      Command::Load.new(@window).call
       @window.mode = :map
     end
   end
