@@ -19,8 +19,10 @@ class Menu
       @window.mode = :map
     when Gosu::KbS
       Command::Save.new(@window).call
+      @window.mode = :map
     when Gosu::KbL
       Command::Load.new(@window).call
+      @window.mode = :map
     end
   end
 
