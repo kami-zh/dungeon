@@ -3,6 +3,8 @@ class Menu
     S: Save
     L: Load
     ESC: Return to map
+
+    E: Exit
   TEXT
 
   def initialize(window)
@@ -23,6 +25,8 @@ class Menu
     when Gosu::KbL
       Command::Load.new(@window).call
       @window.mode = :map
+    when Gosu::KbE
+      @window.close
     end
   end
 
