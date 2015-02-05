@@ -2,6 +2,7 @@ class Menu
   TEXT = <<-TEXT
     S: Save
     L: Load
+
     ESC: Return to map
 
     E: Exit

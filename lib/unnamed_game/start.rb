@@ -1,6 +1,7 @@
 class Start
   TEXT = <<-TEXT
     Return: Start
+
     L: Load
   TEXT
 
