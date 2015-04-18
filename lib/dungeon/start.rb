@@ -18,7 +18,7 @@ class Start
     when Gosu::KbReturn
       @window.mode = :map
     when Gosu::KbL
-      Command::Load.new(@window).call
+      Commands::Load.new(@window).call
       @window.mode = :map
     end
   end

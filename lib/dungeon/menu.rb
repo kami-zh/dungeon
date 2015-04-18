@@ -21,10 +21,10 @@ class Menu
     when Gosu::KbEscape
       @window.mode = :map
     when Gosu::KbS
-      Command::Save.new(@window).call
+      Commands::Save.new(@window).call
       @window.mode = :map
     when Gosu::KbL
-      Command::Load.new(@window).call
+      Commands::Load.new(@window).call
       @window.mode = :map
     when Gosu::KbE
       @window.close

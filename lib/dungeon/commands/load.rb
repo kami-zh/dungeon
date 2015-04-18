@@ -1,6 +1,6 @@
 require 'json'
 
-module Command
+module Commands
   class Load
     # TODO: Enable multiple files
     FILE_PATH = 'data/1.json'

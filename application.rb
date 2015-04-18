@@ -1,6 +1,6 @@
-$LOAD_PATH << File.expand_path('../lib', __FILE__)
+$:.unshift File.expand_path('../lib', __FILE__)
 
-require 'unnamed_game'
+require 'dungeon'
 
 window = Window.new
 window.show

@@ -7,7 +7,7 @@ class Window < Gosu::Window
   def initialize
     super(480, 480, false)
 
-    self.caption = 'Unnamed Game'
+    self.caption = 'Dungeon'
 
     @mode = :start
 
